@@ -1,0 +1,5 @@
+com\script\MockCrypto.class
+com\script\ScriptInterpreter.class
+com\script\Main.class
+com\script\ScriptParser.class
+com\script\StackMachine.class

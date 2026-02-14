@@ -8,4 +8,5 @@ public class ScriptParser {
     public static List<String> parse(String script) {
         return Arrays.asList(script.trim().split("\\s+"));
     }
+    
 }

@@ -9,6 +9,7 @@ public class StackMachine {
 
     public void push(byte[] data) {
         stack.push(data);
+        
     }
 
     public byte[] pop() {

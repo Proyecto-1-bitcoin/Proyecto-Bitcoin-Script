@@ -1,5 +1,10 @@
 package com.script;
 
+
+
+
+
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -9,7 +14,7 @@ public class StackMachine {
 
     public void push(byte[] data) {
         stack.push(data);
-        
+
     }
 
     public byte[] pop() {

@@ -1,3 +1,12 @@
+/**
+ * @author Jeremhy López
+ * @author Jonathan Cofiño
+ * @author Henry Guzmán
+ * @since 2026-03-19
+ * @version 1.5
+ * Clase que sirve como el interprete de las instrucciones de ScriptBitcoin
+ */
+
 package com.script;
 
 import java.util.Arrays;
@@ -8,8 +17,17 @@ import java.util.List;
 
 public class ScriptInterpreter {
 
+	/**
+	 * stack Es la pila que almacena las múltiples instrucciones a interpretar.
+	 */
     private StackMachine stack = new StackMachine();
 
+    /**
+     * Método que se encarga de ejecutar y determinar cada una de las funciones de BitcoinScript.
+     * @param script Lista de elementos que se usaran para ejecutar las operaciones, según se seleccione.
+     * @param trace Valor que indica si hay que imprimir el resultado guardado en la memoria luego de realizar una operación.
+     * @return El resultado obtenido al realizar una de las operaciones definidas eliminandolo de la memoria.
+     */
     public boolean execute(List<String> script, boolean trace) {
 
         for (String token : script) {

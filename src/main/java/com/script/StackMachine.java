@@ -1,12 +1,9 @@
 package com.script;
 
-
-
-
-
-
 import java.util.ArrayDeque;
 import java.util.Deque;
+
+
 
 public class StackMachine {
 
@@ -45,5 +42,9 @@ public class StackMachine {
             }
         }
         System.out.println();
+    }
+    
+    public int size() {
+        return stack.size();
     }
 }

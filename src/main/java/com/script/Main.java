@@ -22,6 +22,12 @@ public class Main {
 
         System.out.println("\n=== Demo 4: OP_IF anidado ===");
         runNestedConditional(trace);
+
+        System.out.println("\n=== Demo 5: Multisig 2-de-3 (2 firmas válidas) ===");
+        runMultisig(trace, true);
+
+        System.out.println("\n=== Demo 6: Multisig 2-de-3 (solo 1 firma válida) ===");
+        runMultisig(trace, false);
     }
 
     /** P2PKH estándar: válido si useFirmValid=true, inválido si false. */
@@ -76,5 +82,38 @@ public class Main {
         List<String> tokens = ScriptParser.parse(script);
         boolean result = interpreter.execute(tokens, trace);
         System.out.println("Resultado: " + result);
+    }
+
+    /**
+     * Multisig 2-de-3: se necesitan 2 firmas válidas de 3 claves posibles.
+     * Stack esperado (de abajo hacia arriba):
+     *   OP_0 <firma1> <firma2> OP_2 <clave1> <clave2> <clave3> OP_3 OP_CHECKMULTISIG
+     *
+     * MockCrypto.checkSig valida si sig="valid" y pubKey="publicKeyN".
+     * Con bothValid=true  -> firma1="valid"/clave1, firma2="valid"/clave2 -> 2 válidas -> true
+     * Con bothValid=false -> firma1="valid"/clave1, firma2="INVALIDA"     -> 1 válida  -> false
+     */
+    static void runMultisig(boolean trace, boolean bothValid) {
+        ScriptInterpreter interpreter = new ScriptInterpreter();
+
+        String sig2 = bothValid ? "valid" : "INVALIDA";
+
+        // Nota: MockCrypto.checkSig compara sig=="valid" && pubKey=="publicKey".
+        // Para multisig simulamos que todas las claves se llaman "publicKey"
+        // y las firmas válidas son "valid".
+        String script = "OP_0 "                        // bug histórico
+                + "valid " + sig2 + " "                // 2 firmas
+                + "OP_2 "                              // nFirmas = 2
+                + "publicKey publicKey publicKey "     // 3 claves
+                + "OP_3 "                              // nClaves = 3
+                + "OP_CHECKMULTISIG";
+
+        List<String> tokens = ScriptParser.parse(script);
+        try {
+            boolean result = interpreter.execute(tokens, trace);
+            System.out.println("Resultado: " + result);
+        } catch (ScriptException e) {
+            System.out.println("Error en script: " + e.getMessage());
+        }
     }
 }

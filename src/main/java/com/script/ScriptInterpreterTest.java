@@ -13,7 +13,9 @@ class ScriptInterpreterTest {
         interpreter = new ScriptInterpreter();
     }
 
+    // =========================================================
     // OP_DUP
+    // =========================================================
 
     @Test
     void opDup_duplicaElTope() {
@@ -28,7 +30,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // OP_DROP
+    // =========================================================
 
     @Test
     void opDrop_eliminaElTope() {
@@ -43,7 +47,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // OP_EQUAL
+    // =========================================================
 
     @Test
     void opEqual_valoresIguales_empuja1() {
@@ -63,7 +69,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // OP_EQUALVERIFY
+    // =========================================================
 
     @Test
     void opEqualVerify_valoresIguales_continua() {
@@ -78,7 +86,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // OP_HASH160
+    // =========================================================
 
     @Test
     void opHash160_produceHashDelTope() {
@@ -95,7 +105,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // OP_CHECKSIG
+    // =========================================================
 
     @Test
     void opCheckSig_firmaValida_empuja1() {
@@ -115,7 +127,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // OP_IF / OP_ELSE / OP_ENDIF
+    // =========================================================
 
     @Test
     void opIf_condicionVerdadera_ejecutaRamaIf() {
@@ -186,7 +200,9 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
     // P2PKH completo
+    // =========================================================
 
     @Test
     void p2pkh_firmaYClaveCorrectas_retornaTrue() {
@@ -214,7 +230,56 @@ class ScriptInterpreterTest {
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
     }
 
+    // =========================================================
+    // OP_CHECKMULTISIG
+    // =========================================================
+
+    @Test
+    void opCheckMultisig_2de3_ambasFirmasValidas_retornaTrue() {
+        var tokens = ScriptParser.parse(
+            "OP_0 valid valid OP_2 publicKey publicKey publicKey OP_3 OP_CHECKMULTISIG");
+        assertTrue(interpreter.execute(tokens, false));
+    }
+
+    @Test
+    void opCheckMultisig_2de3_soloUnaFirmaValida_retornaFalse() {
+        var tokens = ScriptParser.parse(
+            "OP_0 valid INVALIDA OP_2 publicKey publicKey publicKey OP_3 OP_CHECKMULTISIG");
+        assertFalse(interpreter.execute(tokens, false));
+    }
+
+    @Test
+    void opCheckMultisig_2de3_ningunaFirmaValida_retornaFalse() {
+        var tokens = ScriptParser.parse(
+            "OP_0 INVALIDA INVALIDA OP_2 publicKey publicKey publicKey OP_3 OP_CHECKMULTISIG");
+        assertFalse(interpreter.execute(tokens, false));
+    }
+
+    @Test
+    void opCheckMultisig_faltaElementoExtraBug_lanzaExcepcion() {
+        // Sin el OP_0 del fondo -> debe lanzar excepción
+        var tokens = ScriptParser.parse(
+            "valid valid OP_2 publicKey publicKey publicKey OP_3 OP_CHECKMULTISIG");
+        assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
+    }
+
+    @Test
+    void opCheckMultisig_nFirmasMayorQueNClaves_lanzaExcepcion() {
+        // nFirmas=3 > nClaves=2 -> inválido
+        var tokens = ScriptParser.parse(
+            "OP_0 valid valid valid OP_3 publicKey publicKey OP_2 OP_CHECKMULTISIG");
+        assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
+    }
+
+    @Test
+    void opCheckMultisig_stackVacioAlLeerNClaves_lanzaExcepcion() {
+        var tokens = ScriptParser.parse("OP_CHECKMULTISIG");
+        assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
+    }
+
+    // =========================================================
     // Casos borde generales
+    // =========================================================
 
     @Test
     void stackVacioAlFinal_retornaFalse() {

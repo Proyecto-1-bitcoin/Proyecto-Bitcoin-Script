@@ -142,6 +142,54 @@ public class ScriptInterpreter {
                             break;
                         }
 
+                        case "OP_CHECKMULTISIG": {
+                            // 1. Leer cuántas claves públicas hay
+                            if (stack.isEmpty()) throw new ScriptException("OP_CHECKMULTISIG: falta nClaves");
+                            int nKeys = stack.pop()[0];
+                            if (nKeys < 0 || nKeys > 20) throw new ScriptException("OP_CHECKMULTISIG: nClaves inválido");
+                            if (stack.size() < nKeys) throw new ScriptException("OP_CHECKMULTISIG: no hay suficientes claves en el stack");
+
+                            // 2. Sacar las claves públicas
+                            byte[][] pubKeys = new byte[nKeys][];
+                            for (int i = 0; i < nKeys; i++) {
+                                pubKeys[i] = stack.pop();
+                            }
+
+                            // 3. Leer cuántas firmas se requieren
+                            if (stack.isEmpty()) throw new ScriptException("OP_CHECKMULTISIG: falta nFirmas");
+                            int nSigs = stack.pop()[0];
+                            if (nSigs < 0 || nSigs > nKeys) throw new ScriptException("OP_CHECKMULTISIG: nFirmas inválido");
+                            if (stack.size() < nSigs) throw new ScriptException("OP_CHECKMULTISIG: no hay suficientes firmas en el stack");
+
+                            // 4. Sacar las firmas
+                            byte[][] sigs = new byte[nSigs][];
+                            for (int i = 0; i < nSigs; i++) {
+                                sigs[i] = stack.pop();
+                            }
+
+                            // 5. Bug histórico de Bitcoin: consumir un elemento extra (el OP_0 del fondo)
+                            if (stack.isEmpty()) throw new ScriptException("OP_CHECKMULTISIG: falta el elemento extra (bug histórico)");
+                            stack.pop();
+
+                            // 6. Validar: cada firma debe coincidir con al menos una clave,
+                            //    recorriendo las claves en orden (no se reutilizan claves)
+                            int keyIndex = 0;
+                            int validSigs = 0;
+                            for (byte[] sig : sigs) {
+                                while (keyIndex < nKeys) {
+                                    if (MockCrypto.checkSig(sig, pubKeys[keyIndex])) {
+                                        validSigs++;
+                                        keyIndex++; // esta clave ya se usó
+                                        break;
+                                    }
+                                    keyIndex++;
+                                }
+                            }
+
+                            stack.push(validSigs >= nSigs ? new byte[]{1} : new byte[]{0});
+                            break;
+                        }
+
                         default:
                             try {
                                 int number = Integer.parseInt(token);

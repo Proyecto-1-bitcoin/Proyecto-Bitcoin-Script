@@ -144,7 +144,7 @@ public class Main {
         try {
             boolean result = interpreter.execute(tokens, trace);
             System.out.println("Resultado: " + result);
-        } catch (ScriptException e) {
+        } catch (ScriptException e){
             System.out.println("Error en script: " + e.getMessage());
         }
     }

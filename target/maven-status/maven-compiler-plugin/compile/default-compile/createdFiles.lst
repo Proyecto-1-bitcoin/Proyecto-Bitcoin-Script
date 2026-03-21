@@ -1,5 +1,8 @@
 com\script\MockCrypto.class
+<<<<<<< HEAD
 com\script\ScriptException.class
+=======
+>>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
 com\script\ScriptInterpreter.class
 com\script\Main.class
 com\script\ScriptParser.class

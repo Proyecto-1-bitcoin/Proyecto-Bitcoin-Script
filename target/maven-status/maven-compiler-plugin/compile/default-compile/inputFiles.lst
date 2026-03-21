@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src\com\script\Main.java
 C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src\com\script\MockCrypto.java
 C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src\com\script\ScriptException.java
 C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src\com\script\ScriptInterpreter.java
 C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src\com\script\ScriptParser.java
 C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src\com\script\StackMachine.java
+=======
+C:\Users\dosty\bitcoin-script-interpreter\src\main\java\com\script\Main.java
+C:\Users\dosty\bitcoin-script-interpreter\src\main\java\com\script\MockCrypto.java
+C:\Users\dosty\bitcoin-script-interpreter\src\main\java\com\script\ScriptInterpreter.java
+C:\Users\dosty\bitcoin-script-interpreter\src\main\java\com\script\ScriptParser.java
+C:\Users\dosty\bitcoin-script-interpreter\src\main\java\com\script\StackMachine.java
+>>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a

@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"com.script","l":"Main"},{"p":"com.script","l":"MockCrypto"},{"p":"com.script","l":"ScriptException","k":"13"},{"p":"com.script","l":"ScriptInterpreter"},{"p":"com.script","l":"ScriptParser"},{"p":"com.script","l":"StackMachine"}];updateSearchResults();

@@ -1,0 +1,5 @@
+com\script\ScriptInterpreterTest.class
+com\script\MockCryptoTest.class
+com\script\StackMachineTest.class
+com\script\ScriptExceptionTest.class
+com\script\ScriptParserTest.class

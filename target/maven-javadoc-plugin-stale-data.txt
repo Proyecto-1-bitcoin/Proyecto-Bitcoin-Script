@@ -1,0 +1,43 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+--no-fonts
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'C:/Users/dosty/Downloads/Proyecto-Bitcoin-Script-fase-2/Proyecto-Bitcoin-Script-fase-2/src'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/dosty/Downloads/Proyecto-Bitcoin-Script-fase-2/Proyecto-Bitcoin-Script-fase-2/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'bitcoin-script-interpreter 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'bitcoin-script-interpreter 1.0-SNAPSHOT API'
+com.script
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\src = 1774023707000
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\allclasses-index.html = 1774062129768
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\allpackages-index.html = 1774062129772
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\element-list = 1774062129668
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\help-doc.html = 1774062129839
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\index-all.html = 1774062129822
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\index.html = 1774062129830
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\member-search-index.js = 1774062129792
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\module-search-index.js = 1774062129786
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\overview-tree.html = 1774062129740
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\package-search-index.js = 1774062129788
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\search.html = 1774062129827
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\serialized-form.html = 1774062129698
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\tag-search-index.js = 1774062129796
+C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\reports\apidocs\type-search-index.js = 1774062129790

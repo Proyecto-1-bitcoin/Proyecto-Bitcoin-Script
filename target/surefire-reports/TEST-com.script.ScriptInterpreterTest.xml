@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.script.ScriptInterpreterTest" time="0.15" tests="84" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.script.ScriptInterpreterTest" time="0.166" tests="84" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
-    <property name="sun.java.command" value="C:\Users\dosty\AppData\Local\Temp\surefire15942886934804648802\surefirebooter-20260320210032384_3.jar C:\Users\dosty\AppData\Local\Temp\surefire15942886934804648802 2026-03-20T21-00-32_275-jvmRun1 surefire-20260320210032384_1tmp surefire_0-20260320210032384_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\dosty\AppData\Local\Temp\surefire2831870529341981157\surefirebooter-20260320213354841_3.jar C:\Users\dosty\AppData\Local\Temp\surefire2831870529341981157 2026-03-20T21-33-54_718-jvmRun1 surefire-20260320213354841_1tmp surefire_0-20260320213354841_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\test-classes;C:\Users\dosty\Downloads\Proyecto-Bitcoin-Script-fase-2\Proyecto-Bitcoin-Script-fase-2\target\classes;C:\Users\dosty\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\dosty\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\dosty\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\dosty\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\dosty\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dosty\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\dosty\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\dosty\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\dosty\AppData\Local\Temp\surefire15942886934804648802\surefirebooter-20260320210032384_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\dosty\AppData\Local\Temp\surefire2831870529341981157\surefirebooter-20260320213354841_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS-27"/>
@@ -59,88 +59,88 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="opEqualVerify_valoresDistintos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.016"/>
-  <testcase name="opGreaterThan_mayorQue_empuja1" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="opCheckSig_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="opBooland_ambosCero_empuja0" classname="com.script.ScriptInterpreterTest" time="0.003"/>
-  <testcase name="opNumEqualVerify_distintos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.004"/>
+  <testcase name="opEqualVerify_valoresDistintos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.007"/>
+  <testcase name="opGreaterThan_mayorQue_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opCheckSig_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.006"/>
+  <testcase name="opBooland_ambosCero_empuja0" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opNumEqualVerify_distintos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opIf_sinElse_condicionFalsa_stackVacio" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opCheckMultisig_2de3_ningunaFirmaValida_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opCheckMultisig_2de3_ningunaFirmaValida_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.002"/>
   <testcase name="opGreaterThanOrEqual_mayorQue_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opIf_anidado_ambasCondicionesVerdaderas" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opIf_anidado_ambasCondicionesVerdaderas" classname="com.script.ScriptInterpreterTest" time="0.005"/>
   <testcase name="opOver_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opHash256_produceFinalValido" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opHash256_produceFinalValido" classname="com.script.ScriptInterpreterTest" time="0.002"/>
   <testcase name="opLessThan_mayorQue_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opVerify_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opVerify_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opAdd_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="valorUnoEnTope_retornaTrue" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="valorUnoEnTope_retornaTrue" classname="com.script.ScriptInterpreterTest" time="0.0"/>
   <testcase name="opDrop_eliminaElTope" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opNotif_condicionFalsa_ejecutaBloque" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opEndif_sinOpIf_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opOver_copiaPrimerElementoAlTope" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opEndif_sinOpIf_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opOver_copiaPrimerElementoAlTope" classname="com.script.ScriptInterpreterTest" time="0.0"/>
   <testcase name="opSub_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opHash160_produceHashDelTope" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opIf_anidado_primeraFalsa_ignoraTodo" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opElse_sinOpIf_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="opSwap_intercambiaLosDosElementos" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opSwap_intercambiaLosDosElementos" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opHash256_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opSwap_verificaOrdenCorrecto" classname="com.script.ScriptInterpreterTest" time="0.0"/>
-  <testcase name="opLessThanOrEqual_menorQue_empuja1" classname="com.script.ScriptInterpreterTest" time="0.0"/>
-  <testcase name="opSub_resultadoCero_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opEqualVerify_valoresIguales_continua" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opIf_stackVacioAlEvaluar_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opSwap_verificaOrdenCorrecto" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opLessThanOrEqual_menorQue_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opSub_resultadoCero_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opEqualVerify_valoresIguales_continua" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opIf_stackVacioAlEvaluar_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opIf_anidado_primeraVerdaderaSegundaFalsa" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opVerify_valorVerdadero_continua" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opNot_cero_empuja1" classname="com.script.ScriptInterpreterTest" time="0.0"/>
   <testcase name="opCheckSig_firmaValida_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opCheckSigVerify_firmaInvalida_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opVerify_valorFalso_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opVerify_valorFalso_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
   <testcase name="opCheckMultisig_2de3_ambasFirmasValidas_retornaTrue" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opIf_condicionFalsa_ejecutaRamaElse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opCheckMultisig_nFirmasMayorQueNClaves_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="opNotif_condicionVerdadera_ignoraBloque" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opAdd_resultadoCero_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
-  <testcase name="p2pkh_hashIncorrecto_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opIf_condicionVerdadera_ejecutaRamaIf" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opCheckMultisig_nFirmasMayorQueNClaves_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opNotif_condicionVerdadera_ignoraBloque" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opAdd_resultadoCero_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="p2pkh_hashIncorrecto_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opIf_condicionVerdadera_ejecutaRamaIf" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opEqual_valoresIguales_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="p2pkh_firmaYClaveCorrectas_retornaTrue" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opBooland_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="opCheckMultisig_2de3_soloUnaFirmaValida_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opReturn_siempreLanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="p2pkh_firmaYClaveCorrectas_retornaTrue" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opBooland_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opCheckMultisig_2de3_soloUnaFirmaValida_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opReturn_siempreLanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
   <testcase name="opNumEqualVerify_iguales_continua" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opCheckMultisig_stackVacioAlLeerNClaves_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opDrop_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opDup_duplicaElTope" classname="com.script.ScriptInterpreterTest" time="0.0"/>
-  <testcase name="opBooland_ambosVerdaderos_empuja1" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opBooland_ambosVerdaderos_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opGreaterThan_menorQue_empuja0" classname="com.script.ScriptInterpreterTest" time="0.0"/>
   <testcase name="opSub_restaCorrectamente" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opEqual_valoresDistintos_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="scriptEjemploDelPDF_debeRetornarFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="scriptEjemploDelPDF_debeRetornarFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
   <testcase name="opNot_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opSha256_produceFinalValido" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opSha256_produceFinalValido" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opBoolor_ambosVerdaderos_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opLessThanOrEqual_mayorQue_empuja0" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opLessThanOrEqual_mayorQue_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opAdd_sumaCorrectamente" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opGreaterThanOrEqual_igual_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opBooland_unoCero_empuja0" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opBooland_unoCero_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="p2pkh_firmaIncorrecta_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opEqual_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opNot_uno_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opEqual_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opNot_uno_empuja0" classname="com.script.ScriptInterpreterTest" time="0.002"/>
   <testcase name="opIf_sinOpEndif_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opHash160_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opGreaterThanOrEqual_menorQue_empuja0" classname="com.script.ScriptInterpreterTest" time="0.0"/>
-  <testcase name="stackVacioAlFinal_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opGreaterThanOrEqual_menorQue_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="stackVacioAlFinal_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opCheckMultisig_faltaElementoExtraBug_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opDup_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
-  <testcase name="opCheckSigVerify_firmaValida_continua" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opDup_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opCheckSigVerify_firmaValida_continua" classname="com.script.ScriptInterpreterTest" time="0.0"/>
   <testcase name="opSha256_stackVacio_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opLessThanOrEqual_igual_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opSwap_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opBoolor_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.002"/>
+  <testcase name="opBoolor_insuficientesElementos_lanzaExcepcion" classname="com.script.ScriptInterpreterTest" time="0.001"/>
   <testcase name="opLessThan_menorQue_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opBoolor_ambosCero_empuja0" classname="com.script.ScriptInterpreterTest" time="0.0"/>
-  <testcase name="opBoolor_unoCero_empuja1" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opBoolor_ambosCero_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="opBoolor_unoCero_empuja1" classname="com.script.ScriptInterpreterTest" time="0.002"/>
   <testcase name="opCheckSig_firmaInvalida_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="valorCeroEnTope_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.001"/>
-  <testcase name="opLessThan_igual_empuja0" classname="com.script.ScriptInterpreterTest" time="0.001"/>
+  <testcase name="valorCeroEnTope_retornaFalse" classname="com.script.ScriptInterpreterTest" time="0.0"/>
+  <testcase name="opLessThan_igual_empuja0" classname="com.script.ScriptInterpreterTest" time="0.0"/>
 </testsuite>

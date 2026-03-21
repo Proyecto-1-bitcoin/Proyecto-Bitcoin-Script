@@ -4,13 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-=======
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
 class ScriptInterpreterTest {
 
     private ScriptInterpreter interpreter;
@@ -26,10 +23,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opDup_duplicaElTope() {
-<<<<<<< HEAD
-=======
-        // "hello OP_DUP" -> stack: [hello, hello] -> resultado true (no vacío)
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("hello OP_DUP OP_EQUAL");
         assertTrue(interpreter.execute(tokens, false));
     }
@@ -46,10 +39,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opDrop_eliminaElTope() {
-<<<<<<< HEAD
-=======
-        // "OP_1 OP_1 OP_DROP" -> queda OP_1 -> true
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("OP_1 OP_1 OP_DROP");
         assertTrue(interpreter.execute(tokens, false));
     }
@@ -61,7 +50,6 @@ class ScriptInterpreterTest {
     }
 
     // =========================================================
-<<<<<<< HEAD
     // OP_SWAP
     // =========================================================
 
@@ -111,8 +99,6 @@ class ScriptInterpreterTest {
     }
 
     // =========================================================
-=======
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     // OP_EQUAL
     // =========================================================
 
@@ -140,10 +126,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opEqualVerify_valoresIguales_continua() {
-<<<<<<< HEAD
-=======
-        // Si son iguales no lanza excepción y queda OP_1 -> true
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("OP_1 OP_1 OP_1 OP_EQUALVERIFY");
         assertTrue(interpreter.execute(tokens, false));
     }
@@ -155,7 +137,6 @@ class ScriptInterpreterTest {
     }
 
     // =========================================================
-<<<<<<< HEAD
     // OP_NOT
     // =========================================================
 
@@ -469,14 +450,11 @@ class ScriptInterpreterTest {
     }
 
     // =========================================================
-=======
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     // OP_HASH160
     // =========================================================
 
     @Test
     void opHash160_produceHashDelTope() {
-<<<<<<< HEAD
         byte[] expected = MockCrypto.hash160("publicKey".getBytes());
         List<Object> tokens = new ArrayList<>();
         tokens.add("publicKey");
@@ -484,13 +462,6 @@ class ScriptInterpreterTest {
         tokens.add(expected);   // byte[] directo
         tokens.add("OP_EQUAL");
         assertTrue(interpreter.executeWithData(tokens, false));
-=======
-        // hash("publicKey") dos veces debe ser igual
-        byte[] expected = MockCrypto.hash160("publicKey".getBytes());
-        String hashStr = new String(expected);
-        var tokens = ScriptParser.parse("publicKey OP_HASH160 " + hashStr + " OP_EQUAL");
-        assertTrue(interpreter.execute(tokens, false));
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     }
 
     @Test
@@ -522,7 +493,6 @@ class ScriptInterpreterTest {
     }
 
     // =========================================================
-<<<<<<< HEAD
     // OP_CHECKSIGVERIFY
     // =========================================================
 
@@ -539,47 +509,29 @@ class ScriptInterpreterTest {
     }
 
     // =========================================================
-=======
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     // OP_IF / OP_ELSE / OP_ENDIF
     // =========================================================
 
     @Test
     void opIf_condicionVerdadera_ejecutaRamaIf() {
-<<<<<<< HEAD
-=======
-        // OP_1 -> condición true -> ejecuta OP_1 dentro del IF -> resultado true
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("OP_1 OP_IF OP_1 OP_ELSE OP_0 OP_ENDIF");
         assertTrue(interpreter.execute(tokens, false));
     }
 
     @Test
     void opIf_condicionFalsa_ejecutaRamaElse() {
-<<<<<<< HEAD
-=======
-        // OP_0 -> condición false -> ejecuta OP_0 dentro del ELSE -> resultado false
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("OP_0 OP_IF OP_1 OP_ELSE OP_0 OP_ENDIF");
         assertFalse(interpreter.execute(tokens, false));
     }
 
     @Test
     void opIf_sinElse_condicionFalsa_stackVacio() {
-<<<<<<< HEAD
-=======
-        // OP_0 -> condición false, no hay ELSE -> stack vacío -> false
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("OP_0 OP_IF OP_1 OP_ENDIF");
         assertFalse(interpreter.execute(tokens, false));
     }
 
     @Test
     void opIf_anidado_ambasCondicionesVerdaderas() {
-<<<<<<< HEAD
-=======
-        // Ambos OP_IF son true -> ejecuta el OP_1 más interno -> true
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse(
             "OP_1 OP_IF OP_1 OP_IF OP_1 OP_ELSE OP_0 OP_ENDIF OP_ELSE OP_0 OP_ENDIF");
         assertTrue(interpreter.execute(tokens, false));
@@ -587,10 +539,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opIf_anidado_primeraVerdaderaSegundaFalsa() {
-<<<<<<< HEAD
-=======
-        // Outer=true, inner=false -> ejecuta ELSE interno -> OP_0 -> false
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse(
             "OP_1 OP_IF OP_0 OP_IF OP_1 OP_ELSE OP_0 OP_ENDIF OP_ELSE OP_0 OP_ENDIF");
         assertFalse(interpreter.execute(tokens, false));
@@ -598,10 +546,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opIf_anidado_primeraFalsa_ignoraTodo() {
-<<<<<<< HEAD
-=======
-        // Outer=false -> todo el bloque interno se ignora -> stack vacío -> false
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse(
             "OP_0 OP_IF OP_1 OP_IF OP_1 OP_ENDIF OP_ENDIF");
         assertFalse(interpreter.execute(tokens, false));
@@ -633,16 +577,12 @@ class ScriptInterpreterTest {
 
     // =========================================================
     // P2PKH completo
-<<<<<<< HEAD
     // Usamos executeWithData() para pasar el hash como byte[] directo
     // y evitar la corrupción que ocurre al convertirlo a String.
-=======
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     // =========================================================
 
     @Test
     void p2pkh_firmaYClaveCorrectas_retornaTrue() {
-<<<<<<< HEAD
         byte[] pubKeyHash = MockCrypto.hash160("publicKey".getBytes());
         List<Object> tokens = new ArrayList<>();
         tokens.add("valid");
@@ -653,18 +593,10 @@ class ScriptInterpreterTest {
         tokens.add("OP_EQUALVERIFY");
         tokens.add("OP_CHECKSIG");
         assertTrue(interpreter.executeWithData(tokens, false));
-=======
-        byte[] hash = MockCrypto.hash160("publicKey".getBytes());
-        String pubKeyHash = new String(hash);
-        var tokens = ScriptParser.parse(
-            "valid publicKey OP_DUP OP_HASH160 " + pubKeyHash + " OP_EQUALVERIFY OP_CHECKSIG");
-        assertTrue(interpreter.execute(tokens, false));
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     }
 
     @Test
     void p2pkh_firmaIncorrecta_retornaFalse() {
-<<<<<<< HEAD
         byte[] pubKeyHash = MockCrypto.hash160("publicKey".getBytes());
         List<Object> tokens = new ArrayList<>();
         tokens.add("INVALIDA");
@@ -675,21 +607,10 @@ class ScriptInterpreterTest {
         tokens.add("OP_EQUALVERIFY");
         tokens.add("OP_CHECKSIG");
         assertFalse(interpreter.executeWithData(tokens, false));
-=======
-        byte[] hash = MockCrypto.hash160("publicKey".getBytes());
-        String pubKeyHash = new String(hash);
-        var tokens = ScriptParser.parse(
-            "INVALIDA publicKey OP_DUP OP_HASH160 " + pubKeyHash + " OP_EQUALVERIFY OP_CHECKSIG");
-        assertFalse(interpreter.execute(tokens, false));
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     }
 
     @Test
     void p2pkh_hashIncorrecto_lanzaExcepcion() {
-<<<<<<< HEAD
-=======
-        // El hash no coincide -> OP_EQUALVERIFY lanza ScriptException
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse(
             "valid publicKey OP_DUP OP_HASH160 hashFalso OP_EQUALVERIFY OP_CHECKSIG");
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
@@ -722,10 +643,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opCheckMultisig_faltaElementoExtraBug_lanzaExcepcion() {
-<<<<<<< HEAD
-=======
-        // Sin el OP_0 del fondo -> debe lanzar excepción
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse(
             "valid valid OP_2 publicKey publicKey publicKey OP_3 OP_CHECKMULTISIG");
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
@@ -733,10 +650,6 @@ class ScriptInterpreterTest {
 
     @Test
     void opCheckMultisig_nFirmasMayorQueNClaves_lanzaExcepcion() {
-<<<<<<< HEAD
-=======
-        // nFirmas=3 > nClaves=2 -> inválido
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse(
             "OP_0 valid valid valid OP_3 publicKey publicKey OP_2 OP_CHECKMULTISIG");
         assertThrows(ScriptException.class, () -> interpreter.execute(tokens, false));
@@ -754,10 +667,6 @@ class ScriptInterpreterTest {
 
     @Test
     void stackVacioAlFinal_retornaFalse() {
-<<<<<<< HEAD
-=======
-        // Script vacío -> stack vacío -> false
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
         var tokens = ScriptParser.parse("");
         assertFalse(interpreter.execute(tokens, false));
     }
@@ -773,7 +682,6 @@ class ScriptInterpreterTest {
         var tokens = ScriptParser.parse("OP_1");
         assertTrue(interpreter.execute(tokens, false));
     }
-<<<<<<< HEAD
 
     @Test
     void scriptEjemploDelPDF_debeRetornarFalse() {
@@ -781,6 +689,4 @@ class ScriptInterpreterTest {
         var tokens = ScriptParser.parse("1 2 OP_ADD 5 OP_GREATERTHAN");
         assertFalse(interpreter.execute(tokens, false));
     }
-=======
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
 }

@@ -3,18 +3,13 @@ package com.script;
 import java.security.MessageDigest;
 
 /**
-<<<<<<< HEAD
  * Clase que tiene como función encargarse de la codificación de datos usando funciones hash simuladas.
  * En un entorno real, estas operaciones utilizarían librerías criptográficas externas.
  * Para este proyecto didáctico se implementan con {@link java.security.MessageDigest} de Java.
-=======
- * Clase que tiene como función encargarse de la codificación y descodificación de datos usando hash.
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
  * @author Jeremhy López
  * @author Jonathan Cofiño
  * @author Henry Guzmán
  * @since 2026-03-19
-<<<<<<< HEAD
  * @version 2.0
  */
 public class MockCrypto {
@@ -26,19 +21,6 @@ public class MockCrypto {
      * @return El hash resultante como arreglo de bytes.
      * @throws RuntimeException Si el algoritmo SHA-256 no está disponible.
      */
-=======
- * @version 1.5
- */
-
-public class MockCrypto {
-
-	/**
-	 * Se encarga de transformar una lista de datos en un mensaje codificado para ocultarlo. En este caso usa SHA-256.
-	 * @param input Es la lista de datos que se codificaran (ingresada por usuario).
-	 * @return El mensaje ya codificado en hash160.
-	 * @throws RuntimeException Ocurre si los datos no estan en el formato correcto o necesario.
-	 */
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
     public static byte[] hash160(byte[] input) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -49,7 +31,6 @@ public class MockCrypto {
     }
 
     /**
-<<<<<<< HEAD
      * Simula OP_SHA256: aplica una sola ronda de SHA-256 al input.
      * @param input Datos de entrada a hashear.
      * @return El hash SHA-256 como arreglo de bytes.
@@ -89,19 +70,9 @@ public class MockCrypto {
      * @param signature Firma digital del usuario (simulada).
      * @param pubKey Clave pública del usuario (simulada).
      * @return true si ambos valores coinciden con los esperados, false en caso contrario.
-=======
-     * Método que se encarga de verificar que la firma o contraseña ingresada por el usuario sea valida.
-     * @param signature Contraseña o firma que solo conoce el usuario y debe ser validada.
-     * @param pubKey Contraseña o firma pública que sirve para reconocer al usuario y debe ser mostrada.
-     * @return Ambas firmas o contraseñas (la privada y la pública) que el usuario puede usar.
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
      */
     public static boolean checkSig(byte[] signature, byte[] pubKey) {
         return new String(signature).equals("valid")
                 && new String(pubKey).equals("publicKey");
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 74b08a5c620f6e4a8535a89473f784718854b25a
